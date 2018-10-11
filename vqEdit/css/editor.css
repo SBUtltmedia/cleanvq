@@ -1,0 +1,1414 @@
+/* Editor view */
+
+#editorView {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.text {
+    font-family: "Helvetica Neue", sans-serif;
+    color: #ffffff;
+}
+
+.textF {
+    font-family: "FuturaDemi", sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+textarea {
+    background-color: #333;
+    border: none;
+    resize: none;
+    padding: 0;
+    margin: 0;
+}
+
+select {
+    background: #333;
+    border: 0px none;
+    text-align: center;
+}
+
+input {
+    background: #333;
+    border: 0px none;
+    margin: 0;
+    padding: 0;
+}
+
+#headerBar {
+    width: 95%;
+    height: 5%;
+    left: 2.5%;
+    top: 2.5%;
+    position: absolute;
+    background-color: #222;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#returnToMenu {
+    width: 3%;
+    height: 75%;
+    left: 2.5%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #777;
+    background-image: url(../img/return_symbol.svg);
+}
+
+#quizTitleInput {
+    width: 22%;
+    height: 75%;
+    top: 12.5%;
+    left: 7.5%;
+    position: absolute;
+    text-align: left;
+    padding-left: .5%;
+    background-color: #333;
+}
+
+#quizStatsSelect {
+    width: 22%;
+    height: 75%;
+    top: 12.5%;
+    left: 7.5%;
+    position: absolute;
+    text-align: left;
+    padding-left: .5%;
+    background-color: #333;
+}
+
+#headerStatsLabel {
+    width: 20%;
+    height: 100%;
+    left: 40%;
+    top: -.5%;
+    position: absolute;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+#saveButton {
+    width: 10%;
+    height: 75%;
+    left: 32.5%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+    opacity: 0;
+}
+
+@keyframes exitSaveButton {
+    0% {
+        transform: rotateX(0deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: rotateX(720deg) scale(1);
+        opacity: 1;
+    }
+    75% {
+        transform: rotateX(720deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(720deg) scale(.5);
+        opacity: 0;
+    }
+}
+
+.anim_exitSaveButton {
+    animation: exitSaveButton 1s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes enterSaveButton {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(720deg);
+        opacity: 1;
+    }
+}
+
+.anim_enterSaveButton {
+    animation: enterSaveButton .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+#readOnlyLabel {
+    width: 12%;
+    height: 75%;
+    left: 31.5%;
+    top: 19%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+    visibility: hidden;
+}
+
+#copyLinkButton {
+    width: 10%;
+    height: 75%;
+    left: 45%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+#copyLinkBubble {
+    width: 50%;
+    height: 75%;
+    left: 25%;
+    top: 112.5%;
+    position: absolute;
+    opacity: 0;
+}
+
+@keyframes enterQuizLink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.anim_enterQuizLink {
+    animation: enterQuizLink .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes exitQuizLink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.anim_exitQuizLink {
+    animation: exitQuizLink .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+#copyLinkBubbleText {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    text-align: center;
+    color: black;
+    background-color: #dddddd;
+}
+
+#permissionsButton {
+    width: 10%;
+    height: 75%;
+    left: 57.5%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+#permissionsBlocker {
+    width: 10%;
+    height: 75%;
+    left: 57.5%;
+    top: 12.5%;
+    position: absolute;
+    background-image: url(../img/blocker.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 200;
+    visibility: hidden;
+}
+
+#uploadCSVButton {
+    width: 10%;
+    height: 75%;
+    left: 70%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+#downloadCSVButton {
+    width: 10%;
+    height: 75%;
+    left: 82.5%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+.csvButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 25%;
+    position: absolute;
+    text-align: center;
+}
+
+#fileUploadInput {
+    display: none;
+}
+
+.csvBlocker {
+    width: 10%;
+    height: 75%;
+    top: 12.5%;
+    position: absolute;
+    background-image: url(../img/blocker.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 200;
+    visibility: hidden;
+}
+
+#uploadCSVBlocker {
+    left: 70%;
+}
+
+#downloadCSVBlocker {
+    left: 82.5%;
+}
+
+#editorHelpButton {
+    width: 3%;
+    height: 75%;
+    left: 95%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #777;
+    background-image: url(../img/help_symbol.svg);
+}
+
+#statsDownloadButton {
+    width: 15%;
+    height: 75%;
+    left: 82.50%;
+    top: 12.5%;
+    position: absolute;
+    background-color: #555;
+    opacity: .25;
+    pointer-events: none;
+}
+
+#statsDownloadButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 20%;
+    position: absolute;
+    text-align: center;
+}
+
+#videoPlayer {
+    width: 60%;
+    height: 45%;
+    left: 2.5%;
+    top: 10%;
+    position: absolute;
+    background-color: #222;
+}
+
+#videoBox {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+}
+
+#watchTimeBox {
+    width: 60%;
+    height: 12.5%;
+    left: 2.5%;
+    top: 57.5%;
+    position: absolute;
+    background-color: #222;
+    visibility: hidden;
+    z-index: -100;
+}
+
+@keyframes leftSideInOut {
+    from {
+        transform: rotateY(0deg);
+        transform-origin: left center;
+        visibility: visible;
+    }
+    to {
+        transform: rotateY(90deg);
+        transform-origin: left center;
+        visibility: hidden;
+    }
+}
+
+.anim_leftSideIn {
+    animation: leftSideInOut .15s 0s 1 linear reverse forwards;
+}
+
+.anim_leftSideOut {
+    animation: leftSideInOut .15s 0s 1 linear normal forwards;
+}
+
+@keyframes rightSideInOut {
+    from {
+        transform: rotateY(0deg);
+        transform-origin: right center;
+        visibility: visible;
+    }
+    to {
+        transform: rotateY(-90deg);
+        transform-origin: right center;
+        visibility: hidden;
+    }
+}
+
+.anim_rightSideIn {
+    animation: rightSideInOut .15s 0s 1 linear reverse forwards;
+}
+
+.anim_rightSideOut {
+    animation: rightSideInOut .15s 0s 1 linear normal forwards;
+}
+
+@keyframes topSideInOut {
+    from {
+        transform: rotateX(0deg);
+        transform-origin: center top;
+        visibility: visible;
+    }
+    to {
+        transform: rotateX(-90deg);
+        transform-origin: center top;
+        visibility: hidden;
+    }
+}
+
+.anim_topSideIn {
+    animation: topSideInOut .15s 0s 1 linear reverse forwards;
+}
+
+.anim_topSideOut {
+    animation: topSideInOut .15s 0s 1 linear normal forwards;
+}
+
+#questionPanel {
+    width: 32.5%;
+    height: 60%;
+    left: 65%;
+    top: 10%;
+    position: absolute;
+    background-color: #222;
+}
+
+#questionNumber {
+    width: 10%;
+    height: 7.5%;
+    left: 2%;
+    top: 1.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/black_circle.svg);
+}
+
+#questionNumberText {
+    width: 100%;
+    height: 70%;
+    left: 0%;
+    top: 10%;
+    position: absolute;
+    text-align: center;
+}
+
+#questionTypeLabel {
+    width: 32%;
+    height: 4.5%;
+    left: 20%;
+    top: 3.3%;
+    position: absolute;
+    text-align: left;
+}
+
+#questionTypeSelect {
+    width: 40%;
+    height: 5%;
+    left: 30%;
+    top: 2.9%;
+    position: absolute;
+}
+
+#removeQuestionButton {
+    width: 10%;
+    height: 7.5%;
+    left: 88%;
+    top: 1.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/circle_x.svg);
+}
+
+#questionTextLabel {
+    width: 50%;
+    height: 5%;
+    left: 5%;
+    top: 12%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+#questionTextInput {
+    width: 86%;
+    height: 16%;
+    left: 5%;
+    top: 17%;
+    position: absolute;
+    padding: 2%;
+}
+
+#questionChoiceLabel {
+    width: 50%;
+    height: 5%;
+    left: 5%;
+    top: 40%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+.questionChoiceBox {
+    width: 90%;
+    height: 5%;
+    left: 5%;
+    position: absolute;
+}
+
+#questionChoiceBox1 {
+    top: 45%;
+}
+
+#questionChoiceBox2 {
+    top: 51.5%;
+}
+
+#questionChoiceBox3 {
+    top: 58%;
+}
+
+#questionChoiceBox4 {
+    top: 64.5%;
+}
+
+#questionChoiceBox5 {
+    top: 71%;
+}
+
+.questionChoiceInput {
+    width: 86%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.questionChoiceCorrect {
+    width: 8%;
+    height: 100%;
+    left: 92%;
+    top: 0%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkOn {
+    background-image: url(../img/circle_check.svg);
+}
+
+.checkOff {
+    background-image: url(../img/circle_check_gray.svg);
+}
+
+.questionExpoBox {
+    width: 75%;
+    height: 500%;
+    left: -80%;
+    top: -250%;
+    position: absolute;
+    background-color: #222;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.questionExpoTitle {
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+.questionExpoInput {
+    width: 85%;
+    height: 58%;
+    left: 5%;
+    top: 25%;
+    position: absolute;
+    background-color: #333;
+    padding: 2.5%;
+}
+
+.questionExpoArrow {
+    width: 10%;
+    height: 20%;
+    left: 96%;
+    top: 48%;
+    position: absolute;
+    color: #505050;
+    text-align: center;
+}
+
+@keyframes expoFadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.anim_expoFadeIn {
+    animation: expoFadeIn .05s 0s 1 linear normal forwards;
+}
+
+@keyframes expoFadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.anim_expoFadeOut {
+    animation: expoFadeOut .05s 0s 1 linear normal forwards;
+}
+
+#questionAnswerLabel {
+    width: 50%;
+    height: 5%;
+    left: 5%;
+    top: 40%;
+    position: absolute;
+}
+
+#questionAnswerBox {
+    width: 90%;
+    height: 5%;
+    left: 5%;
+    top: 45%;
+    position: absolute;
+}
+
+#questionAnswerInput {
+    width: 96%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#questionTimingLabel {
+    width: 50%;
+    height: 5%;
+    left: 5%;
+    top: 79%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+.questionTimingBox {
+    width: 42.5%;
+    height: 13%;
+    top: 84%;
+    position: absolute;
+    background-color: #333;
+}
+
+#questionTimingBox1 {
+    left: 5%;
+}
+
+#questionTimingBox2 {
+    left: 52.5%;
+}
+
+.questionTimingBoxLabel {
+    width: 80%;
+    height: 20%;
+    left: 0%;
+    top: 5%;
+    position: absolute;
+    text-align: center;
+}
+
+.questionTimingBoxText {
+    width: 80%;
+    height: 50%;
+    left: 0%;
+    top: 52%;
+    position: absolute;
+    text-align: center;
+}
+
+.questionTimingJump {
+    width: 18%;
+    height: 45%;
+    left: 81%;
+    top: 2.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
+}
+
+#questionTimingJump1 {
+    background-image: url(../img/jump_green.svg);
+}
+
+#questionTimingJump2 {
+    background-image: url(../img/jump_red.svg);
+}
+
+.questionTimingSet {
+    width: 18%;
+    height: 45%;
+    left: 81%;
+    top: 52.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
+}
+
+#questionTimingSet1 {
+    background-image: url(../img/set_poke_green.svg);
+}
+
+#questionTimingSet2 {
+    background-image: url(../img/set_poke_red.svg);
+}
+
+#videoPlayPause {
+    width: 10%;
+    height: 30%;
+    left: 30%;
+    top: 55%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.playState {
+    background-image: url(../img/button_play.svg);
+}
+
+.pauseState {
+    background-image: url(../img/button_pause.svg);
+}
+
+#seekSlider {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 20;
+}
+
+#timeDisplay {
+    width: 30%;
+    height: 30%;
+    left: 42.5%;
+    top: 55%;
+    position: absolute;
+    background-color: #333;
+    overflow: hidden;
+}
+
+#timeDisplayText {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+}
+
+#timeDisplayInput {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+    background-color: #333;
+    visibility: hidden;
+    z-index: 20;
+    animation: timeDisplayInputFlash 1s alternate infinite;
+}
+
+@keyframes timeDisplayInputFlash {
+    from {
+        background-color: #333;
+    }
+    to {
+        background-color: #555;
+    }
+}
+
+#videoWatchInfoBox {
+    width: 20%;
+    height: 40%;
+    left: 75.0%;
+    top: 48%;
+    position: absolute;
+    background-color: #333;
+}
+
+#videoWatchInfoLabel {
+    width: 100%;
+    height: 25%;
+    left: 0%;
+    top: 7.5%;
+    position: absolute;
+    text-align: center;
+}
+
+#videoWatchInfoText {
+    width: 100%;
+    height: 25%;
+    left: 0%;
+    top: 35%;
+    position: absolute;
+    text-align: center;
+}
+
+#questionMarkers {
+    width: 93%;
+    height: 47%;
+    left: 3.5%;
+    top: 0%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+.questionMarker {
+    width: 4%;
+    height: 40%;
+    left: -2%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.questionMarkerTop {
+    top: 10%;
+    background-image: url(../img/poke_green.svg);
+    transform-origin: center bottom;
+}
+
+.questionMarkerBottom {
+    top: 50%;
+    background-image: url(../img/poke_red.svg);
+    transform-origin: center top;
+}
+
+.questionMarkerText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+}
+
+.questionMarkerTextTop {
+    top: 10%;
+    color: #2cb674;
+}
+
+.questionMarkerTextBottom {
+    top: 40%;
+    color: #eb2529;
+}
+
+@keyframes foldQuestionMarker {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+
+.anim_foldQuestionMarker {
+    animation: foldQuestionMarker .25s 0s 1 linear normal forwards;
+}
+
+@keyframes questionMarkerSelect {
+    0% {
+        transform: scale(.75);
+        opacity: .5;
+        z-index: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 20;
+    }
+}
+
+.anim_questionMarkerSelect {
+    animation: questionMarkerSelect .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes questionMarkerDeselect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 20;
+    }
+    100% {
+        transform: scale(.75);
+        opacity: .5;
+        z-index: 0;
+    }
+}
+
+.anim_questionMarkerDeselect {
+    animation: questionMarkerDeselect .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+
+/* Input slider */
+
+#sliderBox {
+    width: 95%;
+    height: 7%;
+    left: 2.5%;
+    top: 20%;
+    position: absolute;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #777;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 30%;
+    background: #777;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50%;
+    background: white;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 30%;
+  background: #777;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  background: white;
+}
+
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  background: transparent;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 30%;
+  background: #777;
+  border: none;
+  border-radius: 3px;
+}
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: white;
+}
+
+#seekSlider::-webkit-slider-thumb {
+    height: 300%;
+    width: 2%;
+    margin-top: -0.775%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+#numberButtonPanel {
+    width: 32.5%;
+    height: 25%;
+    left: 65%;
+    top: 72.5%;
+    position: absolute;
+    background-color: #222;
+}
+
+.questionButton {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/black_circle.svg);
+    transform: scale(.75);
+    opacity: .5;
+}
+
+.questionButtonText {
+    width: 100%;
+    height: 50%;
+    top: 13.5%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+}
+
+@keyframes buttonSelect {
+    0% {
+        transform: scale(.75);
+        opacity: .5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.anim_buttonSelect {
+    animation: buttonSelect .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes buttonDeselect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.75);
+        opacity: .5;
+    }
+}
+
+.anim_buttonDeselect {
+    animation: buttonDeselect .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+.buttonPlus {
+    background-image: url(../img/black_circle_plus.svg);
+}
+
+#videoControls {
+    width: 60%;
+    height: 25%;
+    left: 2.5%;
+    top: 72.5%;
+    position: absolute;
+    background-color: #222;
+}
+
+@keyframes spinButton {
+    0% {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(90deg);
+    }
+    25.1% {
+        transform: rotateY(270deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.anim_spinButton {
+    animation: spinButton .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes spinPanel {
+    0% {
+        transform: rotateX(0deg);
+    }
+    25% {
+        transform: rotateX(90deg);
+    }
+    25.1% {
+        transform: rotateX(270deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.anim_spinPanel {
+    animation: spinPanel .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes newQuestionButton {
+    0% {
+        transform: rotateY(0deg) scale(0);
+        opacity: 0;
+    }
+    25% {
+        transform: rotateY(90deg) scale(.175);
+    }
+    25.1% {
+        transform: rotateY(270deg) scale(.175);
+    }
+    100% {
+        transform: rotateY(360deg) scale(.75);
+        opacity: .5;
+    }
+}
+
+.anim_newQuestionButton {
+    animation: newQuestionButton .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+@keyframes spinButtonNew {
+    0% {
+        transform: rotateY(0deg);
+        opacity: .5;
+    }
+    25% {
+        transform: rotateY(90deg);
+        opacity: .625;
+    }
+    25.1% {
+        transform: rotateY(270deg);
+        opacity: .625;
+    }
+    100% {
+        transform: rotateY(360deg);
+        opacity: 1;
+    }
+}
+
+.anim_spinButtonNew {
+    animation: spinButtonNew .25s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+#errorBubble {
+    width: 20%;
+    height: 10%;
+    left: 46%;
+    top: 0%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/error_bubble.svg);
+    opacity: 0;
+}
+
+#errorBubbleText {
+    width: 77%;
+    top: 80%;
+    left: 6%;
+    top: 13%;
+    position: absolute;
+    color: red;
+}
+
+@keyframes showErrorText {
+    0% {
+        left: 41%;
+        opacity: 0;
+    }
+    5% {
+        left: 46%;
+        opacity: 1;
+    }
+    75% {
+        left: 45.5%;
+        opacity: 1;
+    }
+    100% {
+        left: 46%;
+        opacity: 0;
+    }
+}
+
+.anim_showErrorText {
+    animation: showErrorText 5s 0s 1 cubic-bezier(0, .5, .5, 1) normal forwards;
+}
+
+#unsavedWarningPanel {
+    width: 40%;
+    height: 20%;
+    left: 30%;
+    top: 40%;
+    position: absolute;
+    background-color: #000;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#unsavedWarningLabel {
+    width: 100%;
+    height: 25%;
+    top: 5%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+}
+
+.unsavedWarningIcon {
+    width: 10%;
+    height: 16%;
+    top: 10%;
+    position: absolute;
+    background-image: url(../img/warning.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#unsavedWarningIcon1 {
+    left: 20%;
+}
+
+#unsavedWarningIcon2 {
+    left: 70%;
+}
+
+#unsavedWarningSubtext {
+    width: 90%;
+    height: 25%;
+    top: 33%;
+    left: 5%;
+    position: absolute;
+    text-align: center;
+}
+
+.unsavedWarningButton {
+    width: 40%;
+    height: 25%;
+    top: 65%;
+    position: absolute;
+    background-color: blue;
+}
+
+#unsavedWarningButton1 {
+    left: 7.5%;
+    background-color: #1c6e46;
+}
+
+#unsavedWarningButton2 {
+    left: 52.5%;
+    background-color: #ec2227;
+}
+
+.unsavedWarningButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 18%;
+    position: absolute;
+    text-align: center;
+}
+
+#noQuestionsPanel {
+    width: 32.5%;
+    height: 87.5%;
+    top: 10%;
+    left: 65%;
+    position: absolute;
+    background-color: #222;
+    pointer-events: none;
+}
+
+#noQuestionsText {
+    width: 100%;
+    top: 35.0%;
+    position: absolute;
+    text-align: center;
+    color: #444;
+}
+
+
+/* Editor help screen */
+
+#helpOverlay {
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.helpBubble {
+    width: 10%;
+    height: 7.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.helpBubbleD {
+    background-image: url(../img/helpBubbleDown.svg);
+}
+
+.helpBubbleU {
+    background-image: url(../img/helpBubbleUp.svg);
+}
+
+.helpBubbleTextD,
+.helpBubbleTextU {
+    color: black;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    left: 5%;
+}
+
+.helpBubbleTextD {
+    top: 15%;
+}
+
+.helpBubbleTextU {
+    top: 27.7%;
+}
+
+#helpDelete {
+    left: 90%;
+    top: 15%;
+}
+
+#helpJumpG {
+    left: 74%;
+    top: 53.5%;
+}
+
+#helpJumpR {
+    left: 89.5%;
+    top: 53.5%;
+}
+
+#helpSetG {
+    left: 74%;
+    top: 67.5%;
+}
+
+#helpSetR {
+    left: 89.5%;
+    top: 67.5%;
+}
+
+#helpType {
+    left: 76.25%;
+    top: 15%;
+}
+
+#helpCorrect {
+    left: 89.75%;
+    top: 29%;
+}
+
+#helpReturn {
+    left: 1.4%;
+    top: 7%;
+}
+
+@keyframes helpOn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes helpOff {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.anim_helpOn {
+    animation: helpOn .15s 0s 1 linear normal forwards;
+}
+
+.anim_helpOff {
+    animation: helpOff .15s 0s 1 linear normal forwards;
+}

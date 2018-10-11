@@ -1,0 +1,382 @@
+/* Score reporting panel */
+
+#scoreReportPanel {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    z-index: 100000;
+    visibility: hidden;
+}
+
+#scoreReportBG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000;
+    opacity: .75;
+}
+
+#scoreReportBox {
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+    position: absolute;
+    background-color: #222;
+}
+
+#scoreReportLabel {
+    width: 100%;
+    top: 4%;
+    position: absolute;
+    text-align: center;
+}
+
+#scoreReportFormatLabel {
+    width: 20%;
+    top: 27.25%;
+    left: 5%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+#scoreReportFormatSelect {
+    width: 65%;
+    top: 27.5%;
+    left: 30%;
+    position: absolute;
+}
+
+#scoreReportFilterLabel {
+    width: 20%;
+    top: 42.25%;
+    left: 5%;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+#scoreReportFilterSelect {
+    width: 65%;
+    top: 42.5%;
+    left: 30%;
+    position: absolute;
+}
+
+#uploadFilterButton {
+    width: 30%;
+    height: 10%;
+    top: 57.5%;
+    left: 30%;
+    position: absolute;
+    background-color: #333;
+}
+
+#downloadFilterButton {
+    width: 30%;
+    height: 10%;
+    top: 57.5%;
+    left: 65%;
+    position: absolute;
+    background-color: #333;
+}
+
+.filterButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 26%;
+    position: absolute;
+    text-align: center;
+}
+
+#downloadScoresButton {
+    width: 40%;
+    height: 15%;
+    left: 5%;
+    top: 77.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+#downloadScoresButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 24%;
+    position: absolute;
+    text-align: center;
+}
+
+#downloadAllScoresButton {
+    width: 40%;
+    height: 15%;
+    left: 55%;
+    top: 77.5%;
+    position: absolute;
+    background-color: #555;
+}
+
+#downloadAllScoresButtonText {
+    width: 100%;
+    height: 50%;
+    left: 0%;
+    top: 24%;
+    position: absolute;
+    text-align: center;
+}
+
+#filterUpload {
+    display: none;
+}
+
+.popupReturn {
+    width: 7.5%;
+    height: 10%;
+    left: 1.875%;
+    top: 2.5%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/return_symbol.svg);
+    background-color: #777;
+}
+
+#permissionsView {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    z-index: 100000;
+    visibility: hidden;
+}
+
+#permissionsPanel {
+    width: 50%;
+    height: 70%;
+    left: 12.5%;
+    top: 10%;
+    position: absolute;
+    background-color: #222;
+}
+
+#permissionsLabel {
+    width: 100%;
+    top: 1.5%;
+    position: absolute;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+#permissionsText {
+    width: 90%;
+    left: 5%;
+    top: 11%;
+    position: absolute;
+    text-align: center;
+}
+
+#permissionsDivider {
+    width: 95%;
+    height: .5%;
+    left: 2.5%;
+    top: 16.5%;
+    position: absolute;
+    background-color: #808080;
+}
+
+#permissionsLabel1 {
+    width: 45%;
+    left: 2.5%;
+    top: 18.25%;
+    position: absolute;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+#permissionsDesc1 {
+    width: 45%;
+    left: 2.5%;
+    top: 24.5%;
+    position: absolute;
+    text-align: center;
+}
+
+#permissionsLabel2 {
+    width: 45%;
+    left: 52.5%;
+    top: 18.25%;
+    position: absolute;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+#permissionsDesc2 {
+    width: 45%;
+    left: 52.5%;
+    top: 24.5%;
+    position: absolute;
+    text-align: center;
+}
+
+#permissionsReportInput {
+    left: 3%;
+}
+
+#permissionsViewInput {
+    left: 52%;
+}
+
+.permissionsInput {
+    width: 41%;
+    height: 61%;
+    top: 32%;
+    position: absolute;
+    padding: 2%;
+}
+
+#permissionsCancel {
+    left: 25%;
+    background-color: #eb2529;
+}
+
+#permissionsSubmit {
+    left: 55%;
+    background-color: #1c6e46;
+}
+
+.permissionsButton {
+    width: 20%;
+    height: 65%;
+    top: 17.5%;
+    position: absolute;
+}
+
+#optionsPanel {
+    width: 20%;
+    height: 70%;
+    left: 67.5%;
+    top: 10%;
+    position: absolute;
+    background-color: #222;
+}
+
+#optionsLabel {
+    width: 100%;
+    top: 3%;
+    position: absolute;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+.optionsModeBox {
+    width: 90%;
+    height: 9%;
+    left: 5%;
+    position: absolute;
+}
+
+#publicModeBox {
+    top: 13%;
+}
+
+#privateModeBox {
+    top: 24%;
+}
+
+.optionsCheckbox {
+    width: 12%;
+    height: 40%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    background-image: url(../img/checkbox_off.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.optionsLabel {
+    width: 80%;
+    left: 15%;
+    top: 3%;
+    position: absolute;
+}
+
+.optionsSubtext {
+    width: 80%;
+    left: 15%;
+    top: 40%;
+    position: absolute;
+}
+
+.optionsDivider {
+    width: 90%;
+    height: .5%;
+    left: 5%;
+    position: absolute;
+    background-color: #808080;
+}
+
+#optionsLoanBox {
+    width: 100%;
+    height: 20%;
+    top: 37%;
+    position: absolute;
+}
+
+#optionsLoanTitle {
+    width: 100%;
+    top: -.5%;
+    text-align: center;
+    position: absolute;
+    color: #c0c0c0;
+}
+
+#optionsLoanLabel {
+    width: 90%;
+    left: 5%;
+    top: 30%;
+    position: absolute;
+    color: #808080;
+}
+
+#optionsLoanInput {
+    width: 90%;
+    height: 20%;
+    left: 5%;
+    top: 44%;
+    position: absolute;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#optionsLoanWarning {
+    width: 90%;
+    left: 5%;
+    top: 66%;
+    position: absolute;
+    color: #eb2529;
+    opacity: 0;
+}
+
+#permissionsOKPanel {
+    width: 75%;
+    height: 7.5%;
+    left: 12.5%;
+    top: 85%;
+    position: absolute;
+    background-color: #222;
+}
+
+#loadingScreen {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/loading.svg);
+    position: absolute;
+    z-index: 1000000;
+}

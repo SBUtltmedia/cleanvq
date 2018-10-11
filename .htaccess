@@ -1,0 +1,40 @@
+AuthType shibboleth
+#ShibRequestSetting requireSession 1
+require shibboleth
+
+RewriteEngine on
+RewriteBase /
+RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
+RewriteRule ^.*$ - [E=CWD:%2]
+Header always unset X-Frame-Options
+
+RewriteCond %{REQUEST_URI} !.*users.*
+RewriteCond %{REQUEST_URI} \.json$
+RewriteRule (.*) %{ENV:CWD}users/$1 [L]
+
+
+RewriteCond %{REQUEST_URI} !.*users.*
+RewriteCond %{REQUEST_URI} \.mp4$
+RewriteRule (.*) %{ENV:CWD}users/$1 [L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+RewriteRule ^/?index.php$ - [L]
+RewriteRule ^/?index.html$ - [L]
+RewriteRule ^/?$ - [L]
+RewriteCond %{REQUEST_URI} !.*users.*
+RewriteCond %{REQUEST_URI} !.*vqEdit.*
+RewriteCond %{REQUEST_URI} !.*vqLib.*
+RewriteCond %{REQUEST_URI} !.*vqPlayer.*
+RewriteCond %{REQUEST_URI} !.*vqAPI.*
+RewriteCond %{REQUEST_URI} !.*vqFolder.*
+
+RewriteRule (.*) %{ENV:CWD}index.php?%{QUERY_STRING}&vqBase=$1 [L]
+
+  php_value error_log PHP_errors.log
+  php_value upload_max_filesize 2000M
+  php_value post_max_size 2000M
+  php_value max_execution_time 500
+  php_value max_input_time 500
+  php_value date.timezone 'America/New_York'
+  php_value memory_limit 512M

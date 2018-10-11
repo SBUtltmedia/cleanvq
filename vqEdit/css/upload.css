@@ -1,0 +1,144 @@
+/* Upload progress */
+
+#uploadProgressPanel {
+    width: 40%;
+    height: 20%;
+    left: 30%;
+    top: 40%;
+    position: absolute;
+    background-color: #333;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#uploadProgressLabel {
+    width: 100%;
+    height: 25%;
+    top: 6%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+}
+
+#uploadProgressBar {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    background-color: #444;
+    z-index: 20;
+}
+
+#uploadProgressBarBox {
+    width: 90%;
+    height: 30%;
+    left: 5%;
+    top: 35%;
+    position: absolute;
+    background-color: #222;
+    z-index: 10;
+}
+
+#uploadProgressCount {
+    width: 100%;
+    height: 25%;
+    top: 31.5%;
+    left: 0%;
+    position: absolute;
+    text-align: center;
+    z-index: 30;
+}
+
+#uploadProgressFlavor {
+    width: 90%;
+    height: 25%;
+    top: 71%;
+    left: 5%;
+    position: absolute;
+    text-align: center;
+}
+
+@keyframes progressIn {
+    0% {
+        transform: scale(.25);
+        opacity: 0;
+        z-index: -10000;
+        visibility: hidden;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 10000;
+        visibility: visible;
+    }
+}
+
+@keyframes progressOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 10000;
+        visibility: visible;
+    }
+    100% {
+        transform: scale(.25);
+        opacity: 0;
+        z-index: -10000;
+        visibility: hidden;
+    }
+}
+
+.anim_progressIn {
+    animation: progressIn .15s 0s 1 linear normal forwards;
+}
+
+.anim_progressOut {
+    animation: progressOut .15s 0s 1 linear normal forwards;
+}
+
+#unsavedWarningBG {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    background-color: white;
+    z-index: -10000;
+    visibility: hidden;
+}
+
+@keyframes fadeInBG {
+    0% {
+        opacity: 0;
+        z-index: -10000;
+        visibility: hidden;
+    }
+    100% {
+        opacity: .25;
+        z-index: 9000;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeOutBG {
+    0% {
+        opacity: .25;
+        z-index: 9000;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        z-index: -10000;
+        visibility: hidden;
+    }
+}
+
+.anim_fadeInBG {
+    animation: fadeInBG .15s 0s 1 linear normal forwards;
+}
+
+.anim_fadeOutBG {
+    animation: fadeOutBG .15s 0s 1 linear normal forwards;
+}

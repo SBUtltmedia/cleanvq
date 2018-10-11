@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+		<script src="js/folderviews.js"></script>
+		<link href='css/vqFolder.css' rel='stylesheet'>
+	</head>
+	<body>
+		<h1>List of Quizzes in this folder</h1>
+		<div id='tv'></div>
+		<script>
+			var dal = '../vqLib/DAL?';
+			var author = new URL(location).searchParams.get('author');
+			var folder = new URL(location).searchParams.get('folder');
+			var lti = decodeURIComponent(new URL(location).searchParams.get('lti'));
+			var a1 = $.ajax({dataType:'JSON', url:dal, data:{author,folder} });
+			var a2 = $.ajax({dataType:'JSON', url:dal, data:{author,folder,consumer:'me',grades:''} });
+			var a3 = $.ajax({dataType:'JSON', url:dal, data:{author,folder,consumer:'me',grade:''} });
+			$.when(a1,a2,a3).done(
+				([qids],[grades],[grade])=>React.render(React.createElement(myul,{dal,author,qids,grade,grades,folder,lti}),$('#tv')[0]))
+		</script>
+	</body>
+</html>

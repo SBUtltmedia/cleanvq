@@ -1,0 +1,216 @@
+/* Folder view */
+
+#folderView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+#folderBG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #111;
+}
+
+#folderList {
+    width: 60%;
+    height: 75%;
+    top: 15%;
+    left: 5%;
+    position: absolute;
+    background-color: #222;
+    overflow-y: scroll;
+    color: white;
+}
+
+#folderInfo {
+    width: 25%;
+    height: 75%;
+    top: 15%;
+    left: 70%;
+    position: absolute;
+    background-color: #222;
+}
+
+.folderInfoPanel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+.folderBox {
+    width: 90%;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+}
+
+.folderQuizBox {
+    width: 90%;
+    height: 100%;
+    left: 7%;
+    position: absolute;
+}
+
+.folder {
+    z-index: 100;
+}
+
+.folderQuiz{
+    z-index: 50;
+}
+
+.folderItem {
+    width: 100%;
+    height: 6%;
+    position: absolute;
+    background-color: #222;
+}
+
+.folderRel {
+    position: relative !important;
+}
+
+.folderNameRel{
+  left: 14% !important;
+}
+
+@keyframes folderSelected {
+    from {
+        background-color: #444;
+    }
+    to {
+        background-color: #555;
+    }
+}
+
+.anim_folderSelected {
+    animation: folderSelected 1s infinite alternate;
+}
+
+.folderIcon {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/icon_folder.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.folderQuizIcon {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/icon_video.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.folderName {
+  width: 90%;
+  left: 10%;
+  top: 10%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+}
+
+.fqShared {
+    font-size: 1rem;
+    color: #808080;
+    font-style: italic;
+}
+
+.folderNum {
+    font-family: "FuturaDemi";
+    color: black !important;
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    text-align: center;
+}
+
+#folderReturn {
+    width: 4.5%;
+    height: 6%;
+    left: 2.5%;
+    top: 4.5%;
+    position: absolute;
+    background-color: #777;
+    background-image: url(../img/return_symbol.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 20;
+}
+
+#folderTitle {
+    width: 100%;
+    top: 2.5%;
+    position: absolute;
+    text-align: center;
+}
+
+#folderAddButton {
+    width: 3.75%;
+    height: 5%;
+    left: 5%;
+    top: 92.5%;
+    position: absolute;
+    background-image: url(../img/add_folder.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#folderAddText {
+    width: 20%;
+    height: 5%;
+    left: 9.5%;
+    top: 92.5%;
+    position: absolute;
+    color: #808080;
+}
+
+#folderFolderThumbnail {
+    width: 100%;
+    height: 35%;
+    top: 11.5%;
+    left: 0%;
+    position: absolute;
+    background-image: url(../img/icon_folder.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#folderDeleteButton {
+    width: 80%;
+    height: 10%;
+    left: 10%;
+    top: 75%;
+    position: absolute;
+    background-color: #505050;
+}
+
+#folderDeleteButtonText {
+    width: 100%;
+    top: 24%;
+    position: absolute;
+    text-align: center;
+}
+
+#folderDeleteInfoText {
+    width: 90%;
+    left: 5%;
+    top: 87.5%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
